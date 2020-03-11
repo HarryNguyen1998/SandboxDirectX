@@ -1,0 +1,6 @@
+# Visual Studio specific files and folders
+.vs/
+
+# Build results
+Game/
+Intermediate/

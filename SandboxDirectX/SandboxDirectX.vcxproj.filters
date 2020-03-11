@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Src\Main.cpp" />
+    <ClCompile Include="Src\Utils\FileLogPolicy.cpp" />
+    <ClCompile Include="Src\Utils\ServiceLocator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Utils\FileLogPolicy.h" />
+    <ClInclude Include="Src\Utils\ILogPolicy.h" />
+    <ClInclude Include="Src\Utils\Logger.h" />
+    <ClInclude Include="Src\Utils\ServiceLocator.h" />
+  </ItemGroup>
+</Project>
