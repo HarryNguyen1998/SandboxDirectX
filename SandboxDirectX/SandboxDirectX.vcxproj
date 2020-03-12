@@ -138,15 +138,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Utils\ServiceLocator.cpp" />
-    <ClCompile Include="Src\Utils\FileLogPolicy.cpp" />
+    <ClCompile Include="Src\Utils\Logger\FileLogPolicy.cpp" />
+    <ClCompile Include="Src\Utils\Logger\ServiceLocator.cpp" />
     <ClCompile Include="Src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\Utils\ServiceLocator.h" />
-    <ClInclude Include="Src\Utils\Logger.h" />
-    <ClInclude Include="Src\Utils\FileLogPolicy.h" />
-    <ClInclude Include="Src\Utils\ILogPolicy.h" />
+    <ClInclude Include="Src\Utils\Expected\Expected.h" />
+    <ClInclude Include="Src\Utils\Logger\FileLogPolicy.h" />
+    <ClInclude Include="Src\Utils\Logger\ILogPolicy.h" />
+    <ClInclude Include="Src\Utils\Logger\Logger.h" />
+    <ClInclude Include="Src\Utils\Logger\ServiceLocator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
