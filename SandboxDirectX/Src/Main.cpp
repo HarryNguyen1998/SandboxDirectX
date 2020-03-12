@@ -1,12 +1,15 @@
 // Utils
-#include "Utils/ServiceLocator.h"
-
+#include "Utils/Logger/ServiceLocator.h"
+#include "Utils/Expected/Expected.h"
 // STL
 #include <exception>
 #include <stdexcept>
+#include <string>
 
 // Windows
 #include <windows.h>
+
+
 
 void StartLoggingService()
 {
@@ -24,6 +27,18 @@ void StartLoggingService()
 #endif
 }
 
+Util::Expected<int> Nani(int x) 
+{
+	if (x == 10) {
+		return Util::Expected<int>::fromException(
+			std::invalid_argument("I hate number ten"));
+	}
+	else {
+		Util::Expected<int> res(x);
+		return res;
+	}
+}
+
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPSTR lpCmdLine,
@@ -37,7 +52,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 		return -1;
 	}
-
-
+	int x = 7;
+	Util::Expected<int> e = Nani(x);
+	if (e.isValid()) {
+		std::string s = "The value of e: " + std::to_string(e.get());
+		MessageBox(nullptr, s.c_str(), "Value", MB_OK);
+	}
+	else {
+		MessageBox(nullptr, "e is not created", "Critical Error!", MB_ICONERROR | MB_OK);
+	}
 	return 0;
 }
